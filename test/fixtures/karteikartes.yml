@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titel: MyString
+  vorderseite: MyText
+  rueckseite: MyText
+  durchschnittsbewertung: 1.5
+
+two:
+  titel: MyString
+  vorderseite: MyText
+  rueckseite: MyText
+  durchschnittsbewertung: 1.5
