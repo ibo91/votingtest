@@ -1,6 +1,5 @@
-<h1>Editing voting</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @voting %> |
-<%= link_to 'Back', votings_path %>
+<%- model_class = Voting -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Voting %></h1>
+</div>
+<%= render :partial => 'form' %>
