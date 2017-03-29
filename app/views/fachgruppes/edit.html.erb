@@ -1,6 +1,5 @@
-<h1>Editing fachgruppe</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @fachgruppe %> |
-<%= link_to 'Back', fachgruppes_path %>
+<%- model_class = Fachgruppe -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Fachgruppe %></h1>
+</div>
+<%= render :partial => 'form' %>

@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Fachgruppe -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Fachgruppe %></h1>
+</div>
 
-<p>
-  <strong>Fachgruppenname:</strong>
-  <%= @fachgruppe.fachgruppenname %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fachgruppenname) %></dt>
+      <dd><pre class="prettyprint"><%= @fachgruppe.fachgruppenname %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Karteikarte:</strong>
-  <%= @fachgruppe.karteikarte %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              fachgruppes_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_fachgruppe_path(@fachgruppe), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              fachgruppe_path(@fachgruppe),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<%= link_to 'Edit', edit_fachgruppe_path(@fachgruppe) %> |
-<%= link_to 'Back', fachgruppes_path %>

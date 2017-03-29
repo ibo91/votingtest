@@ -1,27 +1,36 @@
-<h1>Listing fachgruppes</h1>
-
-<table>
+<%- model_class = Fachgruppe -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Fachgruppe %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Fachgruppenname</th>
-      <th>Karteikarte</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:fachgruppenname) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @fachgruppes.each do |fachgruppe| %>
       <tr>
+        <td><%= fachgruppe.id %></td>
         <td><%= fachgruppe.fachgruppenname %></td>
-        <td><%= fachgruppe.karteikarte %></td>
-        <td><%= link_to 'Show', fachgruppe %></td>
-        <td><%= link_to 'Edit', edit_fachgruppe_path(fachgruppe) %></td>
-        <td><%= link_to 'Destroy', fachgruppe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l fachgruppe.created_at, format: :long %></td>
+        <td>
+          <%= link_to fachgruppe_path(fachgruppe), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to fachgruppe_path(fachgruppe), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Fachgruppe', new_fachgruppe_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_fachgruppe_path,
+            :class => 'btn btn-primary' %>
