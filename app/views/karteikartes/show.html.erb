@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titel:</strong>
+  <%= @karteikarte.titel %>
+</p>
+
+<p>
+  <strong>Vorderseite:</strong>
+  <%= @karteikarte.vorderseite %>
+</p>
+
+<p>
+  <strong>Rueckseite:</strong>
+  <%= @karteikarte.rueckseite %>
+</p>
+
+<p>
+  <strong>Durchschnittsbewertung:</strong>
+  <%= @karteikarte.durchschnittsbewertung %>
+</p>
+
+<%= link_to 'Edit', edit_karteikarte_path(@karteikarte) %> |
+<%= link_to 'Back', karteikartes_path %>

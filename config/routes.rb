@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :karteikartes
+
   resources :favorits
 
   resources :votings do
