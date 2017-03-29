@@ -1,0 +1,27 @@
+<h1>Listing fachgruppes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fachgruppenname</th>
+      <th>Karteikarte</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fachgruppes.each do |fachgruppe| %>
+      <tr>
+        <td><%= fachgruppe.fachgruppenname %></td>
+        <td><%= fachgruppe.karteikarte %></td>
+        <td><%= link_to 'Show', fachgruppe %></td>
+        <td><%= link_to 'Edit', edit_fachgruppe_path(fachgruppe) %></td>
+        <td><%= link_to 'Destroy', fachgruppe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fachgruppe', new_fachgruppe_path %>

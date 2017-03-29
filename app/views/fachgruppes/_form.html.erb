@@ -1,0 +1,25 @@
+<%= form_for(@fachgruppe) do |f| %>
+  <% if @fachgruppe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fachgruppe.errors.count, "error") %> prohibited this fachgruppe from being saved:</h2>
+
+      <ul>
+      <% @fachgruppe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fachgruppenname %><br>
+    <%= f.text_field :fachgruppenname %>
+  </div>
+  <div class="field">
+    <%= f.label :karteikarte_id %><br>
+    <%= f.text_field :karteikarte_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

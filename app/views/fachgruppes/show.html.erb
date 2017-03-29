@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fachgruppenname:</strong>
+  <%= @fachgruppe.fachgruppenname %>
+</p>
+
+<p>
+  <strong>Karteikarte:</strong>
+  <%= @fachgruppe.karteikarte %>
+</p>
+
+<%= link_to 'Edit', edit_fachgruppe_path(@fachgruppe) %> |
+<%= link_to 'Back', fachgruppes_path %>
