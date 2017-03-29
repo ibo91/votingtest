@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Einzelbewertung:</strong>
+  <%= @voting.einzelbewertung %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @voting.user %>
+</p>
+
+<p>
+  <strong>Karteikarte:</strong>
+  <%= @voting.karteikarte %>
+</p>
+
+<%= link_to 'Edit', edit_voting_path(@voting) %> |
+<%= link_to 'Back', votings_path %>
